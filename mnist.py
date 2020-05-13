@@ -3,7 +3,6 @@ from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import RMSprop
-from keras.utils import plot_model
 import matplotlib.pyplot as plt
 import cv2
 import numpy as np
@@ -42,7 +41,7 @@ model = Sequential()
 model.add(Dense(20, activation='relu', input_shape=(81,)))
 model.add(Dense(num_classes, activation='softmax'))
 model.summary()
-plot_model(model, to_file='model.png', show_shapes=True)
+
 model.compile(loss='categorical_crossentropy',
                optimizer=RMSprop(),
                metrics=['accuracy'])
